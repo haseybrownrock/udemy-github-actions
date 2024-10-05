@@ -22,11 +22,15 @@ jobs:
       - run: npm run test -- --coverage
       - run: npm run build
     
-      - uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: backend/covearge/**
-      - uses: actions/download-artifact@v3
+      - uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: coverage
-          path: backend/cdist/index.js
+          path: backend/coverage/**
+          retention-days: 5
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: backend/dist/index.js
+          retention-days: 5
+
