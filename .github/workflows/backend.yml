@@ -22,11 +22,11 @@ jobs:
       - run: npm run test -- --coverage
       - run: npm run build
     
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v3
         with:
           name: dist
           path: backend/covearge/**
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v3
         with:
           name: coverage
           path: backend/cdist/index.js
