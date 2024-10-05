@@ -21,3 +21,14 @@ jobs:
       - run: npm ci
       - run: npm run test
       - run: npm run build
+    
+      - uses: actions/download-artifact@v4
+        with:
+          name: coverage
+          path: backend/covergate/**
+          retention-days: 5 
+      - uses: actions/download-artifact@v4
+        with:
+          name: coverage
+          path: backend/cdist/index.js
+          retention-days: 5 
