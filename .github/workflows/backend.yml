@@ -24,8 +24,8 @@ jobs:
     
       - uses: actions/download-artifact@v4
         with:
-          name: coverage
-          path: backend/covergate/**
+          name: dist
+          path: backend/covearge/**
       - uses: actions/download-artifact@v4
         with:
           name: coverage
